@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmed AL-Adham Kelany - Petrochemical Engineer</title>
+    <title>Darwin & Evolution: The Story of Life</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
@@ -14,100 +12,361 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: #0f0f23;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
             color: #333;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             overflow-x: hidden;
-        }
-
-        .background-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(45deg, #0f0f23, #1a1a3e, #2d2d5a);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .floating-elements {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .floating-circle {
-            position: absolute;
-            border-radius: 50%;
-            background: linear-gradient(45deg, rgba(255,107,107,0.1), rgba(78,205,196,0.1));
-            animation: float 20s infinite linear;
-        }
-
-        .floating-circle:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-circle:nth-child(2) {
-            width: 120px;
-            height: 120px;
-            top: 60%;
-            right: 10%;
-            animation-delay: -5s;
-        }
-
-        .floating-circle:nth-child(3) {
-            width: 60px;
-            height: 60px;
-            bottom: 20%;
-            left: 20%;
-            animation-delay: -10s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px) rotate(0deg);
-                opacity: 0.5;
-            }
-            50% {
-                transform: translateY(-20px) rotate(180deg);
-                opacity: 0.8;
-            }
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-            border-radius: 25px;
-            overflow: hidden;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255,255,255,0.2);
-            animation: slideInUp 1s ease-out;
+            padding: 0 20px;
         }
 
-        @keyframes slideInUp {
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4CAF50;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23134e5e" width="1200" height="800"/><circle fill="%234CAF50" cx="200" cy="200" r="100" opacity="0.3"/><circle fill="%232196F3" cx="800" cy="400" r="150" opacity="0.2"/><circle fill="%23FF9800" cx="1000" cy="150" r="80" opacity="0.3"/></svg>');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.6s forwards;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.3);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section:nth-child(even) {
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .section:nth-child(odd) {
+            background: rgba(240, 248, 255, 0.95);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Tiktaalik Section */
+        .fossil-card {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .fossil-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 300px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23134e5e" width="400" height="300"/><path fill="%234CAF50" d="M50 150 Q200 50 350 150 Q200 250 50 150" opacity="0.6"/><circle fill="%23ffffff" cx="150" cy="120" r="8"/><circle fill="%23ffffff" cx="250" cy="130" r="6"/></svg>');
+            background-size: cover;
+            opacity: 0.3;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #4CAF50;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 3rem 0;
+            opacity: 0;
+            animation: slideIn 0.6s ease forwards;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 50%;
+            padding-left: 2rem;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 50%;
+            padding-right: 2rem;
+            text-align: right;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .timeline-date {
+            background: #4CAF50;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            width: 20px;
+            height: 20px;
+            background: #4CAF50;
+            border: 4px solid white;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        /* Theory Comparison */
+        .theory-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .theory-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theory-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+        }
+
+        .lamarck-card::before {
+            background: linear-gradient(90deg, #ff6b6b, #ff8e8e);
+        }
+
+        .darwin-card::before {
+            background: linear-gradient(90deg, #4CAF50, #66bb6a);
+        }
+
+        .theory-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .theory-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Interactive Elements */
+        .interactive-demo {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .demo-button {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .demo-button:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        /* Evidence Grid */
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .evidence-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .evidence-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .evidence-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #4CAF50, #66bb6a);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(60px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -115,140 +374,10 @@
             }
         }
 
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            padding: 60px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            animation: backgroundMove 30s linear infinite;
-        }
-
-        @keyframes backgroundMove {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(60px, 60px); }
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .profile-image-placeholder {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            margin: 0 auto 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3em;
-            font-weight: 300;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            animation: pulse 3s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .name {
-            font-size: 3.2em;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-            letter-spacing: 2px;
-        }
-
-        .title {
-            font-size: 1.6em;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 20px;
-            font-weight: 300;
-        }
-
-        .location {
-            font-size: 1.2em;
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 30px;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            background: rgba(255,255,255,0.15);
-            padding: 15px 25px;
-            border-radius: 50px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .contact-item:hover {
-            background: rgba(255,255,255,0.25);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        .contact-item a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 0;
-            min-height: 800px;
-        }
-
-        .sidebar {
-            background: linear-gradient(180deg, #2c3e50, #34495e);
-            padding: 50px 40px;
-            color: white;
-        }
-
-        .content-area {
-            padding: 50px 50px;
-            background: white;
-        }
-
-        .section {
-            margin-bottom: 50px;
-            animation: fadeInLeft 0.8s ease-out forwards;
-            opacity: 0;
-        }
-
-        .section:nth-child(1) { animation-delay: 0.2s; }
-        .section:nth-child(2) { animation-delay: 0.4s; }
-        .section:nth-child(3) { animation-delay: 0.6s; }
-        .section:nth-child(4) { animation-delay: 0.8s; }
-
-        @keyframes fadeInLeft {
+        @keyframes slideIn {
             from {
                 opacity: 0;
-                transform: translateX(-30px);
+                transform: translateX(-50px);
             }
             to {
                 opacity: 1;
@@ -256,468 +385,396 @@
             }
         }
 
-        .content-section {
-            margin-bottom: 50px;
-            animation: fadeInRight 0.8s ease-out forwards;
-            opacity: 0;
-        }
-
-        .content-section:nth-child(1) { animation-delay: 0.3s; }
-        .content-section:nth-child(2) { animation-delay: 0.5s; }
-        .content-section:nth-child(3) { animation-delay: 0.7s; }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
             }
-            to {
-                opacity: 1;
-                transform: translateX(0);
+            
+            .nav-links {
+                display: none;
             }
-        }
-
-        .section-title {
-            font-size: 1.4em;
-            font-weight: 600;
-            margin-bottom: 25px;
-            position: relative;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .sidebar .section-title {
-            color: #4ecdc4;
-            border-bottom: 2px solid #4ecdc4;
-            padding-bottom: 10px;
-        }
-
-        .content-area .section-title {
-            color: #2c3e50;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 15px;
-        }
-
-        .skill-item {
-            background: rgba(255,255,255,0.1);
-            margin-bottom: 15px;
-            padding: 15px 20px;
-            border-radius: 15px;
-            border-left: 4px solid #4ecdc4;
-            transition: all 0.3s ease;
-        }
-
-        .skill-item:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateX(10px);
-        }
-
-        .skill-name {
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .skill-level {
-            font-size: 0.9em;
-            opacity: 0.8;
-        }
-
-        .language-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .personal-item {
-            background: rgba(255,255,255,0.1);
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            border-left: 4px solid #ff6b6b;
-        }
-
-        .about-section {
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-            padding: 40px;
-            border-radius: 20px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .about-section p {
-            font-size: 1.1em;
-            line-height: 1.8;
-            color: #2c3e50;
-        }
-
-        .education-item {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            border-left: 5px solid #667eea;
-            transition: all 0.3s ease;
-        }
-
-        .education-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .education-title {
-            font-size: 1.3em;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-
-        .education-details {
-            color: #7f8c8d;
-            font-size: 1.1em;
-        }
-
-        .experience-item {
-            background: white;
-            padding: 35px;
-            border-radius: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-left: 6px solid #4ecdc4;
-            position: relative;
-            transition: all 0.4s ease;
-        }
-
-        .experience-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-        }
-
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 0;
-            width: 6px;
-            height: 100%;
-            background: linear-gradient(180deg, #4ecdc4, #667eea);
-            border-radius: 3px;
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .company-info h3 {
-            font-size: 1.4em;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-
-        .company-location {
-            color: #7f8c8d;
-            font-size: 1em;
-        }
-
-        .date-badge {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 0.9em;
-            box-shadow: 0 5px 15px rgba(255,107,107,0.3);
-        }
-
-        .program-type {
-            background: linear-gradient(135deg, #ddd6fe, #c4b5fd);
-            color: #5b21b6;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: 500;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-
-        .achievements {
-            list-style: none;
-            padding: 0;
-        }
-
-        .achievements li {
-            background: #f8f9fa;
-            padding: 15px 20px;
-            margin-bottom: 12px;
-            border-radius: 10px;
-            border-left: 4px solid #28a745;
-            position: relative;
-            padding-left: 50px;
-        }
-
-        .achievements li::before {
-            content: '✓';
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: #28a745;
-            color: white;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8em;
-            font-weight: bold;
-        }
-
-        @media (max-width: 968px) {
-            .main-content {
+            
+            .theory-comparison {
                 grid-template-columns: 1fr;
             }
             
-            .sidebar {
-                order: 2;
+            .timeline-item:nth-child(even) .timeline-content,
+            .timeline-item:nth-child(odd) .timeline-content {
+                margin: 0;
+                padding: 2rem;
+                text-align: left;
             }
-            
-            .content-area {
-                order: 1;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-                border-radius: 15px;
-            }
-            
-            .header {
-                padding: 40px 20px;
-            }
-            
-            .name {
-                font-size: 2.5em;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .sidebar, .content-area {
-                padding: 30px 25px;
-            }
-            
-            .experience-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-
-        .scroll-indicator {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: rgba(255,255,255,0.2);
-            z-index: 1000;
-        }
-
-        .scroll-progress {
-            height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            width: 0%;
-            transition: width 0.3s ease;
         }
     </style>
 </head>
 <body>
-    <div class="background-animation"></div>
-    <div class="floating-elements">
-        <div class="floating-circle"></div>
-        <div class="floating-circle"></div>
-        <div class="floating-circle"></div>
-    </div>
+    <header>
+        <nav class="container">
+            <div class="logo">🧬 Darwin & Evolution</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#evidence">Evidence</a></li>
+                <li><a href="#journey">Darwin's Journey</a></li>
+                <li><a href="#theories">Theories</a></li>
+                <li><a href="#modern">Modern Evidence</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="scroll-indicator">
-        <div class="scroll-progress" id="scrollProgress"></div>
-    </div>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Darwin & Evolution</h1>
+            <p>Discover the fascinating story of how life on Earth evolved and changed over millions of years</p>
+            <a href="#evidence" class="cta-button">Start Exploring</a>
+        </div>
+    </section>
 
-    <div class="container">
-        <div class="header">
-            <div class="header-content">
-                <div class="profile-image-placeholder">A</div>
-                <h1 class="name">Ahmed AL-Adham Kelany</h1>
-                <p class="title">Petrochemical Engineer</p>
-                <p class="location">📍 Minia, Egypt</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <a href="mailto:ahmadaladham67@gmail.com">📧 Email Me</a>
+    <section id="evidence" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Evidence: Tiktaalik - The "Fishapod"</h2>
+                <p>A 375-million-year-old fossil that bridges the gap between fish and land animals</p>
+            </div>
+            
+            <div class="fossil-card">
+                <div class="image-placeholder">
+                    <span>📸 Tiktaalik roseae Fossil Image Placeholder</span>
+                </div>
+                <h3>Tiktaalik roseae: A Transitional Marvel</h3>
+                <p>Discovered in 2004 in the Canadian Arctic, this remarkable fossil represents one of the most important transitional forms in evolutionary history. Tiktaalik lived 375 million years ago and possessed an extraordinary combination of fish and tetrapod characteristics.</p>
+                
+                <div class="theory-comparison" style="margin-top: 2rem;">
+                    <div class="theory-card">
+                        <h4>🐟 Fish-like Features</h4>
+                        <ul>
+                            <li>Fins and scales</li>
+                            <li>Gills for breathing underwater</li>
+                            <li>Aquatic body structure</li>
+                        </ul>
                     </div>
-                    <div class="contact-item">
-                        <a href="tel:+201157397657">📱 Call Me</a>
+                    <div class="theory-card">
+                        <h4>🦎 Tetrapod-like Features</h4>
+                        <ul>
+                            <li>Flexible neck</li>
+                            <li>Flat head with eyes on top</li>
+                            <li>Wrist-like forelimbs</li>
+                            <li>Ability to support weight on land</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p><strong>Why is this important?</strong> Tiktaalik provides direct evidence that all animals descended from a common ancestor, just as Darwin predicted. It shows us evolution in action - the gradual transition from water to land life.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What is Evolution?</h2>
+                <p>Understanding the fundamental process that shapes all life on Earth</p>
+            </div>
+            
+            <div class="evidence-grid">
+                <div class="evidence-item">
+                    <div class="evidence-icon">🧬</div>
+                    <h3>Genetic Change</h3>
+                    <p>Evolution is the change in the genetic makeup of a population over time. These changes accumulate across generations, leading to new traits and eventually new species.</p>
+                </div>
+                
+                <div class="evidence-item">
+                    <div class="evidence-icon">🎯</div>
+                    <h3>Natural Selection</h3>
+                    <p>The core mechanism of evolution. Individuals with favorable traits are more likely to survive, reproduce, and pass those beneficial traits to their offspring.</p>
+                </div>
+                
+                <div class="evidence-item">
+                    <div class="evidence-icon">🔬</div>
+                    <h3>Observable Today</h3>
+                    <p>We can observe evolution happening right now - from antibiotic-resistant bacteria to changes in finch beak sizes in the Galápagos Islands.</p>
+                </div>
+            </div>
+            
+            <div class="interactive-demo">
+                <h3>🧪 Evolution in Action: Modern Examples</h3>
+                <p>Click the examples below to learn about evolution happening today:</p>
+                <button class="demo-button" onclick="showExample('bacteria')">Antibiotic Resistance</button>
+                <button class="demo-button" onclick="showExample('finches')">Galápagos Finches</button>
+                <button class="demo-button" onclick="showExample('breeding')">Selective Breeding</button>
+                
+                <div id="example-content" style="margin-top: 2rem; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 10px; display: none;">
+                    <p id="example-text"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="journey" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Darwin's Journey of Discovery</h2>
+                <p>How a young naturalist's voyage changed our understanding of life forever</p>
+            </div>
+            
+            <div class="fossil-card">
+                <div class="image-placeholder">
+                    <span>🚢 HMS Beagle Ship Image Placeholder</span>
+                </div>
+                <h3>The Voyage of the HMS Beagle (1831-1836)</h3>
+                <p>In 1831, young Charles Darwin embarked on a journey that would revolutionize science. Initially believing in the "fixity of species" - that all species were unchanging since creation - his observations during this five-year voyage would completely transform his worldview.</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Ancient Greece</div>
+                        <h3>🏛️ Plato & Aristotle</h3>
+                        <p><strong>Plato</strong> believed each species had an ideal, unchanging form. <strong>Aristotle</strong> arranged organisms by complexity in his "Scala Naturae" (Great Chain of Being).</p>
+                        <div class="image-placeholder" style="height: 150px; margin-top: 1rem;">
+                        <span>📸 Molecular Phylogeny Tree Placeholder</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="interactive-demo">
+                <h3>🔬 Evolution Happening Now</h3>
+                <p>Evolution isn't just ancient history - we can observe it happening today!</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 10px;">
+                        <h4>🦠 Antibiotic Resistance</h4>
+                        <p>Bacteria evolve resistance to antibiotics within years or even months, demonstrating natural selection in real-time.</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 10px;">
+                        <h4>🐦 Darwin's Finches</h4>
+                        <p>Researchers have documented changes in beak size and shape in Galápagos finches in response to environmental changes.</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 10px;">
+                        <h4>🐕 Selective Breeding</h4>
+                        <p>Humans have created hundreds of dog breeds, demonstrating how selection pressure can rapidly change organisms.</p>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="main-content">
-            <div class="sidebar">
-                <div class="section">
-                    <h2 class="section-title">Technical Skills</h2>
-                    <div class="skill-item">
-                        <div class="skill-name">Microsoft Office</div>
-                        <div class="skill-level">Proficient</div>
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Impact of Darwin's Theory</h2>
+                <p>How evolutionary theory revolutionized science and our understanding of life</p>
+            </div>
+            
+            <div class="fossil-card">
+                <h3>🌟 Revolutionary Implications</h3>
+                <div class="theory-comparison" style="margin-top: 2rem;">
+                    <div class="theory-card">
+                        <h4>🧬 Scientific Revolution</h4>
+                        <ul>
+                            <li><strong>Unified Biology:</strong> Connected all branches of life sciences</li>
+                            <li><strong>Predictive Power:</strong> Explained and predicted biological patterns</li>
+                            <li><strong>Medical Advances:</strong> Enabled understanding of disease evolution and treatment resistance</li>
+                            <li><strong>Conservation Biology:</strong> Provided framework for biodiversity protection</li>
+                        </ul>
+                        <div class="image-placeholder" style="height: 150px; margin-top: 1rem;">
+                            <span>📸 Scientific Revolution Timeline Placeholder</span>
+                        </div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-name">Aspen HYSYS</div>
-                        <div class="skill-level">Basics</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">AutoCAD 2D</div>
-                        <div class="skill-level">Basics</div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h2 class="section-title">Languages</h2>
-                    <div class="language-item">
-                        <span>Arabic</span>
-                        <span>Native</span>
-                    </div>
-                    <div class="language-item">
-                        <span>English</span>
-                        <span>Intermediate B2</span>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h2 class="section-title">Personal Info</h2>
-                    <div class="personal-item">
-                        <strong>Date of Birth:</strong><br>
-                        20th December 2000
-                    </div>
-                    <div class="personal-item">
-                        <strong>Nationality:</strong><br>
-                        Egyptian
-                    </div>
-                    <div class="personal-item">
-                        <strong>Military Status:</strong><br>
-                        Exempted
+                    <div class="theory-card">
+                        <h4>🌍 Modern Applications</h4>
+                        <ul>
+                            <li><strong>Medicine:</strong> Understanding pathogen evolution and drug resistance</li>
+                            <li><strong>Agriculture:</strong> Crop improvement and pest management</li>
+                            <li><strong>Biotechnology:</strong> Genetic engineering and synthetic biology</li>
+                            <li><strong>Ecology:</strong> Ecosystem management and species conservation</li>
+                        </ul>
+                        <div class="image-placeholder" style="height: 150px; margin-top: 1rem;">
+                            <span>📸 Modern Applications Collage Placeholder</span>
+                        </div>
                     </div>
                 </div>
             </div>
+            
+            <div class="interactive-demo">
+                <h3>💭 Famous Quote</h3>
+                <blockquote style="font-size: 1.3rem; font-style: italic; margin: 2rem 0;">
+                    "There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved."
+                </blockquote>
+                <p>— Charles Darwin, <em>On the Origin of Species</em> (1859)</p>
+            </div>
+        </div>
+    </section>
 
-            <div class="content-area">
-                <div class="content-section">
-                    <h2 class="section-title">Professional Summary</h2>
-                    <div class="about-section">
-                        <p>Fresh Petrochemical Engineering graduate with comprehensive hands-on experience from leading Egyptian oil and fertilizer companies. Proven expertise in process optimization, safety protocols, and industrial operations across upstream and downstream petroleum sectors. Strong analytical and problem-solving skills with excellent communication abilities, eager to contribute to challenging roles that offer professional growth opportunities.</p>
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Test Your Knowledge!</h2>
+                <p>Interactive quiz to reinforce your understanding of evolution</p>
+            </div>
+            
+            <div class="interactive-demo">
+                <div id="quiz-container">
+                    <h3 id="quiz-question">
+                        <span style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">Question 1 of 10 | Easy</span><br>
+                        What is evolution?
+                    </h3>
+                    <div id="quiz-options" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0;">
+                        <button class="demo-button quiz-option" onclick="selectAnswer(0)">A. Change in individual organisms during their lifetime</button>
+                        <button class="demo-button quiz-option" onclick="selectAnswer(1)">B. Change in genetic makeup of populations over time</button>
+                        <button class="demo-button quiz-option" onclick="selectAnswer(2)">C. Creation of new species by divine intervention</button>
+                        <button class="demo-button quiz-option" onclick="selectAnswer(3)">D. Random changes with no pattern</button>
                     </div>
-                </div>
-
-                <div class="content-section">
-                    <h2 class="section-title">Education</h2>
-                    <div class="education-item">
-                        <div class="education-title">Bachelor of Engineering - Petrochemical and Gas Engineering</div>
-                        <div class="education-details">
-                            Faculty of Engineering, Minia University (2019-2024)<br>
-                            <strong>GPA:</strong> 3.11 (Very Good) | <strong>Graduation Project:</strong> Excellent
-                        </div>
+                    <div id="quiz-result" style="display: none; padding: 1rem; background: rgba(255,255,255,0.1); border-radius: 10px; margin-top: 1rem;">
+                        <p id="result-text"></p>
+                        <button class="demo-button" onclick="nextQuestion()" style="margin-top: 1rem;">Next Question</button>
                     </div>
-                </div>
-
-                <div class="content-section">
-                    <h2 class="section-title">Professional Experience</h2>
-                    
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <div class="company-info">
-                                <h3>Pharaonic Petroleum Company</h3>
-                                <div class="company-location">Egypt</div>
-                            </div>
-                            <div class="date-badge">July 2024</div>
-                        </div>
-                        <div class="program-type">Industrial Training Program</div>
-                        <ul class="achievements">
-                            <li>Developed comprehensive knowledge of upstream and downstream petroleum operations, including catalytic cracking and product separation techniques</li>
-                            <li>Collaborated with technical teams to analyze refinery workflows, contributing to improved throughput and product quality</li>
-                            <li>Acquired expertise in risk management practices to mitigate explosive atmosphere risks in refining environments</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <div class="company-info">
-                                <h3>El Nasr Refining Company</h3>
-                                <div class="company-location">Egypt</div>
-                            </div>
-                            <div class="date-badge">August 2023</div>
-                        </div>
-                        <div class="program-type">Industrial Training Program</div>
-                        <ul class="achievements">
-                            <li>Acquired practical skills in refinery process control, specializing in heat exchange systems and energy efficiency optimization</li>
-                            <li>Contributed to troubleshooting operational issues while ensuring compliance with environmental and quality standards</li>
-                            <li>Participated in team-based projects focused on enhancing refinery performance and reducing operational downtime</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <div class="company-info">
-                                <h3>Assiut Oil Refining Company</h3>
-                                <div class="company-location">Assiut, Egypt</div>
-                            </div>
-                            <div class="date-badge">August 2022</div>
-                        </div>
-                        <div class="program-type">Industrial Training Program</div>
-                        <ul class="achievements">
-                            <li>Trained extensively in crude oil distillation and refining processes, including atmospheric and vacuum distillation units</li>
-                            <li>Supported data collection initiatives for process optimization, enhancing gasoline and diesel production efficiency</li>
-                            <li>Completed comprehensive safety training programs aligned with international standards, contributing to operational risk reduction</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <div class="company-info">
-                                <h3>KIMA Aswan Fertilizer Company</h3>
-                                <div class="company-location">Aswan, Egypt</div>
-                            </div>
-                            <div class="date-badge">January 2021</div>
-                        </div>
-                        <div class="program-type">Industrial Training Program</div>
-                        <ul class="achievements">
-                            <li>Gained hands-on experience in fertilizer production processes, focusing on ammonia and urea synthesis operations</li>
-                            <li>Studied comprehensive safety protocols and environmental regulations to ensure industry standards compliance</li>
-                            <li>Assisted in monitoring critical process parameters, contributing to operational efficiency in high-pressure industrial environments</li>
-                        </ul>
+                    <div style="margin-top: 2rem; font-size: 0.9rem; color: rgba(255,255,255,0.7);">
+                        <p><strong>📊 Quiz Structure:</strong></p>
+                        <p>• 6 Easy questions - Basic concepts everyone should know</p>
+                        <p>• 2 Medium questions - Requires good understanding</p>
+                        <p>• 2 Hard questions - For evolution enthusiasts!</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3>🧬 Continue Your Journey</h3>
+            <p>Evolution is one of the most elegant and powerful theories in science. It explains the incredible diversity of life on Earth and continues to guide scientific research today.</p>
+            <p style="margin-top: 2rem; color: #bdc3c7;">
+                &copy; 2025 Darwin & Evolution Educational Website | Created for learning purposes
+            </p>
+            <div style="margin-top: 2rem;">
+                <p><strong>Further Reading:</strong></p>
+                <p>📚 "On the Origin of Species" by Charles Darwin</p>
+                <p>🔬 "The Greatest Show on Earth" by Richard Dawkins</p>
+                <p>🌍 "Your Inner Fish" by Neil Shubin</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        // Scroll progress indicator
-        window.addEventListener('scroll', () => {
-            const scrollTop = document.documentElement.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollPercent = (scrollTop / scrollHeight) * 100;
-            document.getElementById('scrollProgress').style.width = scrollPercent + '%';
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
 
-        // Add smooth animations on scroll
+        // Interactive examples functionality
+        function showExample(type) {
+            const content = document.getElementById('example-content');
+            const text = document.getElementById('example-text');
+            
+            const examples = {
+                bacteria: "🦠 <strong>Antibiotic Resistance:</strong> When antibiotics are used, bacteria with natural resistance survive and reproduce, passing on resistance genes. Over time, entire populations become resistant. This is why doctors emphasize completing antibiotic courses - to prevent resistant bacteria from surviving and multiplying.",
+                
+                finches: "🐦 <strong>Galápagos Finches:</strong> During droughts, finches with larger, stronger beaks can crack tough seeds that smaller-beaked birds cannot. These birds survive better and have more offspring. Researchers have documented beak size changes in real-time over just a few generations in response to environmental conditions.",
+                
+                breeding: "🐕 <strong>Selective Breeding:</strong> Humans have created over 400 dog breeds by selecting for specific traits. From tiny Chihuahuas to massive Great Danes, all dogs descended from wolves. This demonstrates how powerful selection can be in shaping organisms - and this is artificial selection, not even natural selection!"
+            };
+            
+            text.innerHTML = examples[type];
+            content.style.display = 'block';
+        }
+
+        // Quiz functionality
+        let currentQuestionIndex = 0;
+        const questions = [
+            {
+                question: "What is evolution?",
+                options: [
+                    "A. Change in individual organisms during their lifetime",
+                    "B. Change in genetic makeup of populations over time",
+                    "C. Creation of new species by divine intervention", 
+                    "D. Random changes with no pattern"
+                ],
+                correct: 1,
+                explanation: "Evolution is the change in genetic makeup of populations over time, not changes in individuals during their lifetime."
+            },
+            {
+                question: "What was Tiktaalik's significance?",
+                options: [
+                    "A. It was the first fish ever discovered",
+                    "B. It showed the transition from water to land",
+                    "C. It proved dinosaurs existed",
+                    "D. It was the largest fossil ever found"
+                ],
+                correct: 1,
+                explanation: "Tiktaalik was a transitional fossil showing characteristics of both fish and early land animals, demonstrating the evolution from aquatic to terrestrial life."
+            },
+            {
+                question: "According to Darwin, what drives natural selection?",
+                options: [
+                    "A. Individual effort and desire to improve",
+                    "B. Environmental pressure and survival advantage",
+                    "C. Random chance only",
+                    "D. Divine intervention"
+                ],
+                correct: 1,
+                explanation: "Natural selection is driven by environmental pressures that favor individuals with advantageous traits, giving them better survival and reproduction rates."
+            },
+            {
+                question: "What was wrong with Lamarck's theory?",
+                options: [
+                    "A. It suggested species could change",
+                    "B. It proposed inheritance of acquired characteristics",
+                    "C. It was too complex to understand",
+                    "D. It didn't include enough species"
+                ],
+                correct: 1,
+                explanation: "Lamarck incorrectly proposed that characteristics acquired during an individual's lifetime could be inherited by offspring. We now know that genetic inheritance, not acquired traits, drives evolution."
+            }
+        ];
+
+        function selectAnswer(selectedIndex) {
+            const question = questions[currentQuestionIndex];
+            const resultDiv = document.getElementById('quiz-result');
+            const resultText = document.getElementById('result-text');
+            
+            if (selectedIndex === question.correct) {
+                resultText.innerHTML = `<strong>✅ Correct!</strong><br>${question.explanation}`;
+                resultDiv.style.backgroundColor = 'rgba(76, 175, 80, 0.3)';
+            } else {
+                resultText.innerHTML = `<strong>❌ Incorrect.</strong><br>The correct answer was: ${question.options[question.correct]}<br>${question.explanation}`;
+                resultDiv.style.backgroundColor = 'rgba(244, 67, 54, 0.3)';
+            }
+            
+            resultDiv.style.display = 'block';
+            
+            // Disable option buttons
+            document.querySelectorAll('.quiz-option').forEach(btn => {
+                btn.disabled = true;
+                btn.style.opacity = '0.6';
+            });
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+            const question = questions[currentQuestionIndex];
+            
+            document.getElementById('quiz-question').textContent = question.question;
+            document.getElementById('quiz-result').style.display = 'none';
+            
+            const optionButtons = document.querySelectorAll('.quiz-option');
+            question.options.forEach((option, index) => {
+                optionButtons[index].textContent = option;
+                optionButtons[index].disabled = false;
+                optionButtons[index].style.opacity = '1';
+            });
+        }
+
+        // Animate elements on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -732,13 +789,272 @@
             });
         }, observerOptions);
 
-        // Observe all sections for animation
+        // Observe timeline items and cards
         document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('.section, .content-section, .experience-item, .education-item');
-            sections.forEach(section => {
-                observer.observe(section);
+            document.querySelectorAll('.timeline-item, .fossil-card, .evidence-item, .theory-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
             });
         });
+
+        // Add floating animation to hero section
+        function createFloatingElements() {
+            const hero = document.querySelector('.hero');
+            for (let i = 0; i < 20; i++) {
+                const element = document.createElement('div');
+                element.className = 'floating-element';
+                element.style.cssText = `
+                    position: absolute;
+                    width: ${Math.random() * 10 + 5}px;
+                    height: ${Math.random() * 10 + 5}px;
+                    background: rgba(255, 255, 255, 0.1);
+                    border-radius: 50%;
+                    left: ${Math.random() * 100}%;
+                    top: ${Math.random() * 100}%;
+                    animation: float ${Math.random() * 10 + 10}s infinite linear;
+                `;
+                hero.appendChild(element);
+            }
+        }
+
+        // Add CSS for floating animation
+        const floatingCSS = `
+            @keyframes float {
+                0% {
+                    transform: translateY(100vh) rotate(0deg);
+                }
+                100% {
+                    transform: translateY(-100px) rotate(360deg);
+                }
+            }
+        `;
+        
+        const style = document.createElement('style');
+        style.textContent = floatingCSS;
+        document.head.appendChild(style);
+        
+        // Initialize floating elements
+        createFloatingElements();
     </script>
 </body>
-</html>
+</html>    <span>📸 Ancient Greek Philosophers Image Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">1700s</div>
+                        <h3>🌿 Count Buffon</h3>
+                        <p>Georges-Louis Leclerc provided early evidence for evolution and suggested environmental influences and struggle for survival as causes, though he remained cautious about his conclusions.</p>
+                        <div class="image-placeholder" style="height: 150px; margin-top: 1rem;">
+                            <span>📸 Count Buffon Portrait Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">1758</div>
+                        <h3>📚 Carolus Linnaeus</h3>
+                        <p>Created the binomial system of nomenclature we still use today. Despite his revolutionary classification system, he believed in the fixity of species.</p>
+                        <div class="image-placeholder" style="height: 150px; margin-top: 1rem;">
+                            <span>📸 Linnaeus Classification System Image Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Early 1800s</div>
+                        <h3>🦕 Baron Cuvier</h3>
+                        <p>Founded paleontology and discovered that some species had gone extinct. He proposed catastrophism - local disasters caused extinctions, followed by repopulation with new species.</p>
+                        <div class="image-placeholder" style="height: 150px; margin-top: 1rem;">
+                            <span>📸 Cuvier with Fossils Image Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">1794-1796</div>
+                        <h3>👴 Erasmus Darwin</h3>
+                        <p>Charles's grandfather suggested evolution based on animal development changes and vestigial structures, but couldn't explain the mechanism behind it.</p>
+                        <div class="image-placeholder" style="height: 150px; margin-top: 1rem;">
+                            <span>📸 Erasmus Darwin Portrait Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">1809</div>
+                        <h3>🦒 Jean-Baptiste Lamarck</h3>
+                        <p>First to propose a testable hypothesis for evolution: inheritance of acquired characteristics. Though incorrect, his work laid important groundwork for evolutionary thinking.</p>
+                        <div class="image-placeholder" style="height: 150px; margin-top: 1rem;">
+                            <span>📸 Lamarck Portrait Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">1795-1830s</div>
+                        <h3>🌍 Hutton & Lyell</h3>
+                        <p><strong>James Hutton</strong> and <strong>Charles Lyell</strong> proposed uniformitarianism - geological changes happen slowly and continuously, proving Earth was incredibly old.</p>
+                        <div class="image-placeholder" style="height: 150px; margin-top: 1rem;">
+                            <span>📸 Geological Formations Image Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">1798</div>
+                        <h3>📈 Thomas Malthus</h3>
+                        <p>This economist observed that population growth exceeds resource availability, leading to competition for survival. This principle became key to Darwin's natural selection theory.</p>
+                        <div class="image-placeholder" style="height: 150px; margin-top: 1rem;">
+                            <span>📸 Malthus Population Graph Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="theories" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Lamarck vs. Darwin: Two Theories Explained</h2>
+                <p>Understanding the key differences between these evolutionary hypotheses using the giraffe example</p>
+            </div>
+            
+            <div class="theory-comparison">
+                <div class="theory-card lamarck-card">
+                    <div class="image-placeholder" style="height: 200px; margin-bottom: 2rem;">
+                        <span>📸 Lamarck's Giraffe Theory Illustration Placeholder</span>
+                    </div>
+                    <h3>🦒 Lamarck's Hypothesis</h3>
+                    <h4>Inheritance of Acquired Characteristics</h4>
+                    <p><strong>The Process:</strong></p>
+                    <ol>
+                        <li>Giraffes originally had short necks</li>
+                        <li>They constantly stretched their necks to reach high leaves</li>
+                        <li>This stretching made their necks longer during their lifetime</li>
+                        <li>They passed this acquired long neck trait to their offspring</li>
+                        <li>Over generations, all giraffes developed long necks</li>
+                    </ol>
+                    <p><strong>Problem:</strong> Acquired characteristics during an individual's lifetime are not typically inherited by offspring.</p>
+                </div>
+                
+                <div class="theory-card darwin-card">
+                    <div class="image-placeholder" style="height: 200px; margin-bottom: 2rem;">
+                        <span>📸 Darwin's Natural Selection Illustration Placeholder</span>
+                    </div>
+                    <h3>🦒 Darwin's Hypothesis</h3>
+                    <h4>Natural Selection</h4>
+                    <p><strong>The Process:</strong></p>
+                    <ol>
+                        <li>Giraffes originally had varying neck lengths</li>
+                        <li>During food scarcity, longer-necked giraffes could reach more food</li>
+                        <li>These giraffes had better survival and reproduction rates</li>
+                        <li>They passed their long-neck genes to more offspring</li>
+                        <li>Over many generations, long necks became predominant</li>
+                    </ol>
+                    <p><strong>Key:</strong> Variation already existed; natural selection favored beneficial traits that were genetically inherited.</p>
+                </div>
+            </div>
+            
+            <div class="interactive-demo">
+                <h3>🎯 Key Differences</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+                    <div>
+                        <h4>❌ Lamarck (Incorrect)</h4>
+                        <ul style="text-align: left;">
+                            <li>Use creates the organ</li>
+                            <li>Individual effort causes change</li>
+                            <li>Acquired traits are inherited</li>
+                            <li>Goal-directed evolution</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>✅ Darwin (Correct)</h4>
+                        <ul style="text-align: left;">
+                            <li>Variation already exists</li>
+                            <li>Environment selects favorable traits</li>
+                            <li>Genetic traits are inherited</li>
+                            <li>No goal or direction</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="modern" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Modern Evidence for Evolution</h2>
+                <p>How multiple scientific fields support Darwin's theory</p>
+            </div>
+            
+            <div class="evidence-grid">
+                <div class="evidence-item">
+                    <div class="evidence-icon">🦴</div>
+                    <h3>Paleontology</h3>
+                    <p>Fossil records show the progression of life forms over millions of years, including transitional fossils like Tiktaalik.</p>
+                    <div class="image-placeholder" style="height: 150px; margin-top: 1rem;">
+                        <span>📸 Fossil Timeline Placeholder</span>
+                    </div>
+                </div>
+                
+                <div class="evidence-item">
+                    <div class="evidence-icon">🌍</div>
+                    <h3>Biogeography</h3>
+                    <p>The distribution of species around the world reflects their evolutionary history and continental drift patterns.</p>
+                    <div class="image-placeholder" style="height: 150px; margin-top: 1rem;">
+                        <span>📸 Species Distribution Map Placeholder</span>
+                    </div>
+                </div>
+                
+                <div class="evidence-item">
+                    <div class="evidence-icon">⚗️</div>
+                    <h3>Biochemistry</h3>
+                    <p>DNA and protein similarities between species reflect their evolutionary relationships - the more similar, the more recently they shared a common ancestor.</p>
+                    <div class="image-placeholder" style="height: 150px; margin-top: 1rem;">
+                        <span>📸 DNA Comparison Chart Placeholder</span>
+                    </div>
+                </div>
+                
+                <div class="evidence-item">
+                    <div class="evidence-icon">🔬</div>
+                    <h3>Embryology</h3>
+                    <p>Similar developmental patterns in embryos of different species reveal their common ancestry.</p>
+                    <div class="image-placeholder" style="height: 150px; margin-top: 1rem;">
+                        <span>📸 Embryo Comparison Placeholder</span>
+                    </div>
+                </div>
+                
+                <div class="evidence-item">
+                    <div class="evidence-icon">🦴</div>
+                    <h3>Comparative Anatomy</h3>
+                    <p>Homologous structures (like mammalian limbs) and vestigial organs provide evidence of common descent.</p>
+                    <div class="image-placeholder" style="height: 150px; margin-top: 1rem;">
+                        <span>📸 Homologous Structures Placeholder</span>
+                    </div>
+                </div>
+                
+                <div class="evidence-item">
+                    <div class="evidence-icon">🧬</div>
+                    <h3>Molecular Biology</h3>
+                    <p>Gene sequences, protein structures, and chromosomal similarities support evolutionary relationships predicted by other evidence.</p>
+                    <div class="image-placeholder" style="height: 150px; margin-top: 1rem;">
